@@ -1,0 +1,29 @@
+{
+  "AWSEBDockerrunVersioN": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "haakongv/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "haakongv/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "haakongv/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "haakongv/mutli-nginx",
+      "hostname": "nginx",
+      "essential": true
+    }
+  ]
+}
