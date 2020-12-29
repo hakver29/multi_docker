@@ -22,3 +22,16 @@ after_success:
   - docker push haakongv/multi-nginx
   - docker push haakongv/multi-server
   - docker push haakongv/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-2-634386674446
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_acess_key:
+    secure: $AWS_SECRET_KEY
